@@ -6,12 +6,35 @@
     <title>往事只能回味</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script>
+        function setBackground() {
+            const isPortrait = window.innerHeight > window.innerWidth;
+            document.body.style.backgroundImage = isPortrait ?
+                "url('background_vertikal.png')" :
+                "url('background_landscape.png')";
+        }
+
+        window.addEventListener("load", setBackground);
+        window.addEventListener("resize", setBackground);
+    </script>
 </head>
 <body>
-    <audio autoplay loop>
+    <audio id="bg-music" loop>
         <source src="audio.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <script>
+        document.addEventListener("click", function () {
+            const audio = document.getElementById("bg-music");
+            if (audio.paused) {
+                audio.play().catch(e => {
+                    console.log("Autoplay prevented:", e);
+                });
+            }
+        });
+    </script>
+
     <div class="content">
         <img src="yotsuba_pepatah.png" alt="Yotsuba Pepatah" class="mascot">
         <div class="lyrics">
@@ -36,7 +59,9 @@
             你就要变心像时光难倒回<br>
             我只有在梦里相依偎</p>
         </div>
+        <p style="margin-top: 20px; font-size: 0.9em; color: gold;">web ini dibuat oleh Illya</p>
     </div>
-    <script src="script.js"></script>
+
+    <img src="maskot.png" class="maskot-float" alt="Yotsuba Maskot">
 </body>
 </html>
