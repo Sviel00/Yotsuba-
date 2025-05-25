@@ -2,38 +2,32 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #a80000;
+    font-family: "Noto Sans SC", sans-serif;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     color: white;
-    font-family: 'Noto Sans SC', sans-serif;
     text-align: center;
 }
 
 .content {
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 2em;
-    max-width: 800px;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 1em;
-}
-
-.lyrics {
-    margin-top: 1em;
-    font-size: 1.2em;
-    line-height: 2em;
+    max-width: 800px;
+    border-radius: 20px;
 }
 
 .mascot {
-    max-width: 100%;
-    height: auto;
+    width: 200px;
+    display: block;
+    margin: 0 auto 20px;
 }
 
-.maskot-float {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 180px;
-    z-index: 10;
+.lyrics {
+    font-size: 1.2em;
+    line-height: 1.8em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 1em;
 }
