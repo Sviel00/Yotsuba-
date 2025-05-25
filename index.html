@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Yotsuba Web Prank</title>
+  <style>
+    body {
+      margin: 0;
+      background: url('https://i.imgur.com/y7kIYDA.jpg'); /* background merah-emas ala China */
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Noto Serif SC", serif;
+      color: gold;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .maskot {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      width: 150px;
+      z-index: 10;
+    }
+    .container {
+      padding: 40px 20px;
+    }
+    .yotsuba-main {
+      max-width: 400px;
+      width: 100%;
+      border: 4px solid gold;
+      border-radius: 12px;
+      box-shadow: 0 0 30px gold;
+    }
+    .lirik {
+      margin-top: 30px;
+      font-size: 1.3em;
+      white-space: pre-wrap;
+      background: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 14px;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <img class="yotsuba-main" src="yotsuba_pepatah.png" alt="Yotsuba Pepatah China">
+    <div class="lirik">
+      往事只能回味<br>
+      小時候的夢何處追<br>
+      長大後的世界是否還純粹<br>
+      那年你我倆<br>
+      牽著手漫步在風中<br>
+      歌聲隨風傳來多麼動人心扉
+    </div>
+  </div>
+
+  <img class="maskot" src="yotsuba_maskot.png" alt="Maskot Yotsuba">
+
+  <div class="footer">web ini dibuat oleh Illya</div>
+</body>
+</html>
