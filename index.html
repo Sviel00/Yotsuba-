@@ -1,42 +1,113 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>往事只能回味</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illya Music</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script defer src="firebase-config.js"></script>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <div class="content">
-        <img src="yotsuba_pepatah.png" alt="Yotsuba Pepatah" class="mascot">
-        <div class="lyrics">
-            <p>时光一逝永不回<br>
-            往事只能回味<br>
-            忆童年时竹马青梅<br>
-            两小无猜日夜相随<br>
-            春风又吹红了花蕊<br>
-            你已经也添了新岁<br>
-            你就要变心像时光难倒回<br>
-            我只有在梦里相依偎</p>
-            <p>时光一逝永不回<br>
-            往事只能回味<br>
-            忆童年时竹马青梅<br>
-            两小无猜日夜相随<br>
-            春风又吹红了花蕊<br>
-            你已经也添了新岁<br>
-            你就要变心像时光难倒回<br>
-            我只有在梦里相依偎</p>
-            <p>春风又吹红了花蕊<br>
-            你已经也添了新岁<br>
-            你就要变心像时光难倒回<br>
-            我只有在梦里相依偎</p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <header>
+    <img src="assets/logo.png" alt="Illya Music Logo" class="logo">
+    <nav>
+      <a href="#songs">Lagu</a>
+      <a href="#playlist">Playlist</a>
+      <a href="#saved">Save</a>
+    </nav>
+    <button id="loginBtn">Login Google</button>
+  </header>
+
+  <main>
+    <section id="songs">
+      <h1>愛の赤色</h1>
+      <audio controls id="audioPlayer">
+        <source src="songs/ai-no-akairo.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
+      <div class="controls">
+        <button id="saveBtn">💾 Simpan</button>
+        <a href="songs/ai-no-akairo.mp3" download>⬇️ Download</a>
+      </div>
+      <div class="lyrics-container">
+        <button onclick="toggleLyrics()">🎵 Lihat Lirik</button>
+        <pre id="lyrics" class="hidden">
+気づいたら　また君の話
+笑ってるけど　どこか遠い目
+あの人とのこと　うまくいってるって
+「そっか」って言って　心は止まったまま
+
+横断歩道の赤が長すぎて
+渡れないまま　立ち止まってる
+君はもう　青の向こう
+僕だけが　時を忘れてた
+
+愛の赤色　眩しすぎて
+一歩も動けないのさ
+「大丈夫」って笑う僕は
+本当はただ　君に見てほしかった
+すれ違いの優しさが
+胸を締めつけるだけ
+それでもね、君の涙
+僕なんかに見せないでほしいよ
+
+君のLINEに　相談ばかり
+「ケンカしたんだ」って　また僕に言う
+僕はただ　聞いてるふりして
+心で「こっちを向いて」って叫んでた
+
+交差点で止まる車の中
+隣に誰がいるのかなんて
+聞けないし　知りたくない
+でもさ　聞こえたんだ「ありがとう」って
+
+愛の赤色　優しくて
+痛みを隠してくれる
+「応援してるよ」って言葉
+僕にはもう　呪文に聞こえたよ
+近すぎて　遠すぎた
+君の隣の空席
+埋まらないままの未来
+いつまでも赤信号の中で
+
+もしも少しだけ　時間ずれてたら
+君の隣、僕だったかな…？
+そんな「もしも」に意味はなくても
+心はまだ　交差点にいる
+
+愛の赤色　消えないまま
+ずっとこの胸灯ってる
+さよならも　言えないまま
+「またね」で終わる夢を見てた
+君の幸せ願うよ
+本当だよ、でもね
+たまには　ちょっとだけ
+僕のことも思い出して
+        </pre>
+      </div>
+      <p class="copyright">
+        ⚠️ Lagu ini adalah karya orisinal. Dilarang keras memposting ulang, menyalin, atau menggunakan lagu ini tanpa izin pemilik.
+      </p>
+    </section>
+
+    <section id="playlist">
+      <h2>Playlist</h2>
+      <p>Belum ada playlist. Segera hadir!</p>
+    </section>
+
+    <section id="saved">
+      <h2>Lagu Tersimpan</h2>
+      <ul id="savedList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <input type="text" id="searchInput" placeholder="Cari lagu...">
+  </footer>
 </body>
-</html>
+        </html>
+    
